@@ -1,0 +1,18 @@
+<md-dialog data-ng-controller="AuthenticationController">
+			  <md-content>
+			    <!-- <md-subheader class="md-sticky-no-effect">Mango (Fruit)</md-subheader> -->
+			    <h2>You have created a new User</h2>
+			    <h2>{{successfulMessage}}</h2>
+
+			  </md-content>
+			  <div class="md-actions" layout="row">
+			    
+			    <span flex></span>
+			    <md-button ng-click="answer('not useful')">
+			     Define Site
+			    </md-button>
+			    <md-button ng-click="answer('useful')" class="md-primary">
+			      Back
+			    </md-button>
+			  </div>
+</md-dialog>

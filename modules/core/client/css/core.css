@@ -1,0 +1,463 @@
+ .test {
+	background-color: red;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+}
+
+  /*Animations */
+
+  .zoom.ng-hide-remove {
+  		-webkit-animation: bounceInLeft 1s;
+	      -moz-animation: bounceInLeft 1s;
+	      -o-animation: bounceInLeft 1s;
+	      animation: bounceInLeft 1s;
+  }
+
+  .zoom.ng-hide-add {
+  	-webkit-animation: bounceOutRight 1s;
+      -moz-animation: bounceOutRight 1s;
+      -o-animation: bounceOutRight 1s;
+      animation: bounceOutRight 1s;
+  }
+
+.content.ng-leave {
+		
+}
+
+.content.ng-enter {
+  			-webkit-animation: zoomIn 0.7s;
+	      	-moz-animation: zoomIn 0.7s;
+	     	 -o-animation: zoomIn 0.7s;
+	      	animation: zoomIn 0.7s;
+}
+
+
+
+.main-body {
+	background-color: #EEEEEE;
+
+}
+
+/*Testing this*/
+
+
+@media (min-width: 600px) {
+  .main-body {
+	background-color: #EEEEEE;
+	min-height: 900px;
+}
+
+	.logo-sidenav {
+		height: 50px;
+		width: 50px;
+	}
+
+}
+
+@media (max-width: 600px) {
+  .main-body {
+	background-color: #EEEEEE;
+	min-height: 900px;
+}
+
+	.logo-sidenav {
+		height: 40px;
+		width: 40px;
+	}
+
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty{
+	border-color:#FA787E;
+}
+.ng-valid.ng-dirty{
+	border-color:#78FA89;
+}
+
+.header-profile-image {
+	opacity: 0.8;
+	height: 28px;
+	width: 28px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+
+.open  .header-profile-image,
+a:hover .header-profile-image {
+	opacity: 1;
+}
+
+.user-header-dropdown-toggle {
+	padding-top: 11px !important;
+	padding-bottom: 11px !important;
+}
+
+.toolbar-button {
+	font-size: 14px;
+	color: white;
+}
+
+.sidenav-button {
+	font-size: 14px;
+
+}
+
+.mar-5-top {
+	margin-top: 5px; 
+}
+
+
+.tools-bottom {
+	bottom: 0;
+	position: absolute;
+	bottom: 0;
+}
+
+.nav-icon-container {
+	margin-right: 30px;
+}
+
+.navigation-icon {
+	height: 30px;
+	width: 30px;
+	margin-right: 5px;
+	margin-left: 5px; 
+}
+
+.sidenav-icon {
+	width: 50%;
+	height: 50%;
+}
+
+.secondary-icon {
+	font-size: 18px;
+}
+
+.rounded-icon-holder {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	
+}
+
+.sidenav-primary-text {
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.secondary-text {
+	color: #757575;
+}
+.bottom-wrapper {
+	height: 100%;
+}
+.sidenav-custom {
+	
+}
+
+
+
+.custom-tb-bg {
+	background-color: red;
+}
+
+.logo-holder {
+	overflow: hidden;
+}	
+
+.logo-sidenav {
+	width: 55%;
+	min-width: 120px;
+}
+
+.logo-topbar {
+	height: 50px;
+}
+
+.logo-sidenav-text {
+	font-weight: normal;
+}
+
+.submenu {
+	background-color: #F5F5F5;
+}
+
+.avo-bg {
+	background-image: url("/modules/core/img/brand/afruprologo.png");
+	background-repeat: no-repeat;
+	
+}
+
+.sign-up-button {
+	font-size: 14px;
+}
+
+.chip-button {
+	font-size: 14px;
+	font-weight: normal;
+	text-align: left;
+	color: #616161;
+}
+
+.login-form {
+	min-width: 300px;
+}
+
+.profile-options {
+	position: absolute;
+	top: 50px;
+	right: 5px;
+	z-index: 1000;
+	background-color: white;
+
+}
+
+.card-heading {
+	font-weight: bold;
+	color: #424242;
+	margin-bottom: 3px;
+	font-size: 16px;
+
+}
+
+.card-subtitle {
+	/*font-weight: bold;*/
+	color: #BDBDBD;
+}
+
+.body-text-std {
+	font-size: 14px;
+}
+
+.dashboard-card-narrow {
+	
+	background-color: white;
+}
+
+.dashboard-card-full {
+	
+	background-color: white;
+}
+
+.card-bottom {
+	font-size: 14px;
+}
+
+.card-bottom-sheet {
+	background-color: #F5F5F5;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+
+}
+
+.icon-std {
+	
+	font-size: 14px;
+	font-weight: normal;
+	text-align: left;
+	color: black;
+	
+}
+
+.icon-std-white {
+	
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	color: white;
+}
+
+.bottom-card-button {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	color: #616161;
+	
+}
+
+.profile-pic-lg {
+	min-width: 200px;
+	min-height: 200px;
+	background-repeat: no-repeat;
+
+	border-radius: 100%;
+
+}
+
+.profile-list {
+	list-style-type: none;
+	padding: 5px;
+}
+
+.blurry-bg {
+	background-color: rgba(0, 0, 0, 0.4);
+	min-height: 400px;
+	color: white;
+
+}
+
+.normal {
+	font-weight: normal;
+	
+}
+
+.profile-bg {
+	background-color: #FDD835;
+}
+
+.white-bg {
+	background-color: white;
+}
+
+.black-alpha-bg {
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.white {
+	color: white;
+}
+
+.profile-left {
+	margin-top: 60px;
+	margin-bottom: 60px;
+
+}
+
+.card-figure {
+	font-size: 30px;
+	font-weight: lighter;
+	text-align: center;
+}
+
+.sub-figure {
+	text-align: center;
+}
+
+.card-icon-holder {
+	width: 55px;
+	height: 55px;
+	border-radius: 55px;
+	text-align: center;
+	padding: 17px;
+	color: white;
+}
+
+.card-stat {
+	color: black;
+}
+
+.sub-menu {
+	background-color: #F5F5F5;
+	font-size: 13px;
+	color: black;
+	padding-left: 30px;
+	
+}
+.sidenav-btn {
+	width: 100%;
+
+	
+}
+
+.button-text-std {
+	font-size: 13px;
+}
+
+.slide {
+	animation: 1s expand_animation;
+	-webkit-animation: 1s expand_animation;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: block;
+}
+@keyframes expand_animation {
+	from { max-height: 0; }
+	to { max-height: 60px; }
+}
+@-webkit-keyframes expand_animation {
+	from { max-height: 0; }
+	to { max-height: 60px; }
+}
+
+.angular-google-map-container { height: 600px; }
+
+.profile-pic-std {
+	background-color: grey;
+	margin-left: 10px;
+}
+
+.material-fw-list {
+	list-style-type: none;
+	padding: 0;
+	box-shadow: none;
+}
+
+.pad-left-5 {
+	padding-left: 20px;
+}
+
+.line-item-indent {
+	margin-left: 30px;
+}
+
+.single-line-item {
+	font-size: 15px;
+	font-weight: normal;
+}
+
+.grey-700 {
+	color: #616161;
+}
+
+.more {
+	font-size: 25px;
+}
+
+.action-btn {
+
+	position: relative;
+	top: 52px;
+	right: 0px;
+	padding: 12px;
+}
+
+.confirmation {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+}
+
+/*===============================================*/
+.dialogdemoBasicUsage .full {
+  width: 100%;
+  height: 100%; }
+.dialogdemoBasicUsage .gap {
+  width: 50px; }
+.dialogdemoBasicUsage .md-subheader {
+  background-color: #dcedc8;
+  margin: 0px; }
+.dialogdemoBasicUsage h2.md-subheader {
+  margin: 0px;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-top: -24px; }
+.dialogdemoBasicUsage h2.md-subheader.md-sticky-clone {
+  margin-right: 0px;
+  margin-top: 0px;
+  box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.16); }
+.dialogdemoBasicUsage h2 .md-subheader-content {
+  padding-left: 10px; }

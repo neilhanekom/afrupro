@@ -1,0 +1,111 @@
+	<div layout="row" flex data-ng-controller="SitesController" data-ng-init="hideConfirm()" >
+
+	<div class="confirmation" layout="column" layout-align="center center"  data-ng-if="confirmState[0] == 'true'">
+		<md-whiteframe class="md-whiteframe-z3" layout="column" layout-align="center center" layout-padding ng-style="{ 'background-color': 'white'}" layout-margin>
+	    <span layout-margin><ng-md-icon icon="verified_user" size="30px"></ng-md-icon></span>
+	    <span layout="row" layout-align="center center">Succesfully Created New User</span>
+	    <br>
+		<div layout="row" layout-align="center center">
+				<md-button class="md-fab profile-pic-std"  aria-label="Comment" ng-style="{ 'background-image': 'url({{newUser.profileImageURL}})', 'background-size': '100%'}" layout-margin layout-padding>
+			</md-button>
+			<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill >
+					<div flex class="single-line-item ">{{newUser.displayName}}</div>
+			</div>
+			
+		</div>
+		<br>
+	    <span>What would you like to do?</span>
+	    <div class="confirmation-actions" layout="row" layout-align="center center" flex layout-fill>
+	    	<md-button class="md-accent" ng-click="createSite()">Define Site</md-button>
+	    	<md-button class="md-primary" ng-click="listUsers()">Proceed</md-button>
+	    </div>
+	  </md-whiteframe>
+	</div>
+
+
+	<div flex="15" hide-sm hide-md hide-lg></div>
+	<div flex layout="row" layout-wrap layout-align="start">
+		<!-- full width card -->
+		<div layout="column" flex="100">
+				<md-whiteframe class="md-whiteframe-z1 dashboard-card-full " layout="column" layout-margin>	
+				   	<!-- Start wtih Form in here. -->
+				   	<md-content class="md-padding">
+				   		<form name="siteForm" data-ng-submit="create()" flex layout-fill class="std-text">
+				   			<div layout="column" layout-sm="column" layout-fill>
+				   			
+				   			<h2>Define new Site</h2>
+				   			<md-divider></md-divider>
+				   				<div layout="column" layout-sm="column">
+				   				<p><b>User</b> </p>
+				   				<ul class="material-fw-list" flex>
+				   					<li class=" border-bottom" flex layout-fill  layout="column" >
+				   						<div layout="row" >
+				   							<md-button class="md-fab profile-pic-std"  aria-label="Comment" ng-style="{ 'background-image': 'url({{user.profileImageURL}})', 'background-size': '100%'}"  layout-padding>
+			        						</md-button>
+			        						<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill layout-padding >
+														<div flex class="single-line-item ">Neil Hanekom</div>
+											</div>
+											<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill layout-padding >
+														<div flex class="single-line-item ">Compant Name</div>
+											</div>
+											<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill layout-padding >
+														<div flex class="single-line-item ">Mobile Number</div>
+											</div>
+											<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill layout-padding >
+														<div flex class="single-line-item ">neil@test.com</div>
+											</div>
+											<div class="line-item-indent" flex layout="column" layout-align="center end" layout-fill layout-padding >
+														<ng-md-icon icon="keyboard_arrow_down"  size="32px" ></ng-md-icon> 
+											</div>
+				   						</div>
+				   					</li>
+		   						</ul>
+				   				<md-divider></md-divider>	
+					   				
+					   				
+				   				</div>
+				   			
+				   				<br>
+				   				<div layout="row" layout-sm="column">
+				   					<md-input-container flex>
+					   					<label>Site Name</label>
+					   					<input type="text" required name="name" ng-model="credentials.firstName"placeholder="Placeholder text">
+					   					<div ng-messages="managerForm.name.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+								        </div>
+					   				</md-input-container>
+					   				
+				   				</div>
+				   				
+				   				<div layout="row" flex layout-sm="column">
+				   					<md-input-container flex>
+					   					<label>Position(Longitude)</label>
+					   					<input md-maxlength="10" name="mobile" ng-model="credentials.mobileNumber" placeholder="Longtitude">
+					   					<div ng-messages="managerForm.mobile.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+         								<div ng-message="md-maxlength">Mobile has to be 10 characters long.</div>
+								        </div>
+					   				</md-input-container>
+					   				<md-input-container flex>
+					   					<label>Position(Lattitude)</label>
+					   					<input md-maxlength="10" name="mobile" ng-model="credentials.mobileNumber" placeholder="Lattitude">
+					   					<div ng-messages="managerForm.mobile.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+         								<div ng-message="md-maxlength">Mobile has to be 10 characters long.</div>
+								        </div>
+					   				</md-input-container>
+					   				
+				   				</div>
+				   				<br>
+				   				<div layout="row" flex layout-align="end center">
+					   					<md-button type="submit" class="md-raised md-warn">Add Site</md-button>
+					   				</div>
+				   			</div>
+				   		</form>
+				   	</md-content>
+				</md-whiteframe>	
+		</div>
+	</div> <!-- End of Layout middle flex -->
+	<div flex="15" hide-sm hide-md hide-lg></div>
+</div>
+

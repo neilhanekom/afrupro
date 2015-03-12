@@ -1,0 +1,358 @@
+<div layout="row" flex data-ng-controller="DashboardController">
+	<!-- <div flex="15" hide-sm hide-md hide-lg>
+		
+	</div> -->
+	<div flex layout="row" layout-wrap layout-align="start">
+		
+		<!-- ng repeat of 4 best functions -->
+		<div layout="column" flex="100">
+
+		<div>
+			
+
+		</div>
+		<!-- We need to test if users Profile have been created -->
+				<md-whiteframe class="md-whiteframe-z1 dashboard-card-full " layout="column" layout-margin>	
+				   	<div layout="row" ng-style="{'background-image':'url(modules/core/img/bg/profile_bg.jpg)', 'background-repeat':'repeat'}" >
+				   		<div  layout="column" class="black-alpha-bg"  layout-align="end center" layout-fill flex>
+				   					<div layout="column" layout-align="center center" class="profile-left" flex layout-fill>
+				   						<!-- <div class="profile-pic-lg" ng-style="{'background': 'url({{authentication.user.profileImageURL}})'}"></div> -->
+						    			<!-- <img class="profile-pic-lg" data-ng-src="{{authentication.user.profileImageURL}}" > -->
+						    			<h2 class="normal white">Bram</h2>
+						    			<span class="white">Systems and Softwares</span>
+						    			<br>
+						    			<div layout="row" layout-fill layout-align="center center" >
+				   						<md-button class="md-raised md-warn " ng-click="showListBottomSheet($event)">
+									     <span class="button-text-std"><ng-md-icon icon="perm_identity"  size="13px"></ng-md-icon> Profile</span>
+									    </md-button>
+				   					</div>
+				   					</div>
+				   					
+					    </div>
+				    	<div flex="70" layout="column" layout-align="end end" layout-fill hide-sm>
+				    		
+				    		<!-- <div class="card-header" layout="column" layout-padding layout-align="start start" layout-fill>
+											<div flex class="card-heading">Profile</div>			   
+						    </div>
+						   	<div class="body-text-std"  layout-fill flex layout="column" layout-margin layout-padding>
+							 	<md-divider></md-divider>
+							   	<ul class="profile-list">
+							   		<li><b>System Role: </b> {{authentication.user.roles[0]}}</li>
+							   		<li><b>System Role: </b> {{authentication.user.roles[0]}}</li>
+							   		<li><b>System Role: </b> {{authentication.user.roles[0]}}</li>
+							   		<li><b>System Role: </b> {{authentication.user.roles[0]}}</li>	
+							   	</ul>
+						   	</div> -->
+						   	<div  layout="column" layout-sm="row" layout-fill flex layout-align="end end">
+							    <md-button class="md-raised md-warn " ng-click="showListBottomSheet($event)" layout="row" layout-align="center center">
+							     <span class="button-text-std"><ng-md-icon icon="business"  size="14px"></ng-md-icon> Business</span>
+							    </md-button>
+							    <!-- <div class="card-bottom-sheet black-alpha-bg" layout="row" data-ng-hide="false" layout-padding layout-fill data-ng-hide="true">
+									<md-button class="bottom-card-button">
+										<span class="fa fa-inbox icon-std-white" layout-margin></span>
+									</md-button>
+									<md-button class="bottom-card-button">
+										<span class="fa fa-paper-plane icon-std-white" layout-margin></span>	
+									</md-button>
+								</div> -->
+							</div>
+				   		</div>
+				    </div>
+				</md-whiteframe>	
+		</div>
+		<div layout="column" flex="100">
+				<md-whiteframe class="md-whiteframe-z1 dashboard-card-full " layout="column" layout-margin>	
+				   <div class="card-header" layout="row" layout-align="start center" layout-padding>
+		    	<md-button class="md-fab md-primary"  aria-label="Comment" >
+            		<ng-md-icon icon="map"  size="20px"></ng-md-icon> 
+        		</md-button>
+        		<div class="card-primary-text" flex layout="column" layout-align="center start" >
+							<div flex class="card-heading">Site</div>
+							<div flex class="card-subtitle">View your Site Information</div>
+				</div>
+		    </div>
+		    <md-divider ></md-divider>
+		   	<md-content class="body-text-std" layout-padding layout-margin>
+		   	<div class="card-stat" layout="column" >
+		   		
+		   		<ui-gmap-google-map center='map.center' zoom='map.zoom' options='map.options'></ui-gmap-google-map>
+
+		   	</div>
+		   	
+		    <p>Payments</p>
+		    <md-divider ></md-divider>
+		    <ul>
+		    	<li>You have 14 Payments so far</li>
+		    	<li>Your last accepted payment was 21 July 2015</li>
+		    	<li>You last payment was for monthly Installment</li>
+		    	<li>Your current balance is R 5300</li>
+		    	<li>Your Payment status: Up to Date</li>
+		    	<li>Your next payment is due: 1 August 2015</li>
+		    	<li>Your Monthly amount installment is: R500</li>
+		    </ul>
+		   	</md-content>
+		   	<div class="bottom-sheet-demo card-bottom" layout="column" layout-sm="row" layout-align="end end" flex>
+			    <md-button class="md-primary" ng-click="showListBottomSheet($event)">
+			     View
+			    </md-button>
+			    
+			  </div>
+				</md-whiteframe>	
+		</div>
+
+		
+
+		<div layout="column" flex-gt-lg="33" flex-lg="33" flex-md="50" flex-sm="100">
+			<md-whiteframe class="md-whiteframe-z1 dashboard-card-narrow" layout="column" layout-margin >
+		    <div class="card-header" layout="row" layout-align="start center" layout-padding>
+		    	
+		    	<md-button class="md-fab"  aria-label="Comment" ng-style="{'background-color':'#9E9E9E'}">
+            		<span class="white large-text">M</span>
+        		</md-button>
+        		<div class="card-primary-text" flex layout="column" layout-align="center start" >
+							<div flex class="card-heading">Messages</div>
+							<div flex class="card-subtitle">Messaging Stats</div>
+				</div>
+		    </div>
+		    <md-divider ></md-divider>
+		   	<md-content class="body-text-std" layout-padding layout-margin>
+		   	<div layout="row" layout-wrap layout-align="center center">
+		   		<md-button class="md-warn md-hue-2" layout="column" flex layout-align="center center">
+		   			<span class="card-figure ">123</span>
+		   			<span class="sub-figure">Inbox</span>
+		   		</md-button>
+		   		<md-button class="md-primary md-hue-2" layout="column" flex layout-align="center center">
+		   			<span class="card-figure ">67</span>
+		   			<span class="sub-figure">Outbox</span>
+		   		</md-button>
+		   		<md-button class="md-primary md-hue-1" layout="column" flex layout-align="center center">
+		   			<span class="card-figure ">180</span>
+		   			<span class="sub-figure">Sent</span>
+		   		</md-button>
+		   		
+		   		
+		   	</div>
+		   	<br>
+		   	<md-divider ></md-divider>
+
+		   	<p><b>5</b> Unread Messages</p>
+		    
+		   	</md-content>
+		    <div class="bottom-sheet-demo card-bottom" layout="column" layout-sm="row" layout-align="end end" flex>
+			    <md-button class="md-primary" ng-click="showListBottomSheet($event)">
+			     New Message
+			    </md-button>
+			    
+			 </div>
+			  <!-- <md-divider ></md-divider>
+				<div class="card-bottom-sheet" layout="column" data-ng-hide="false" layout-padding>
+					<md-button class="bottom-card-button">
+						<span class="fa fa-inbox icon-std" layout-margin></span>
+						<span> Inbox</span>
+					</md-button>
+					<md-button class="bottom-card-button">
+						<span class="fa fa-paper-plane icon-std" layout-margin></span>
+						<span> New Message</span>
+					</md-button>
+					
+				</div> -->
+
+		  </md-whiteframe>
+
+		</div>
+
+
+		
+			<div layout="column" flex-gt-lg="33" flex-lg="33" flex-md="50" flex-sm="100">
+		  <md-whiteframe class="md-whiteframe-z1 dashboard-card-narrow" layout="column" layout-margin >
+		    <div class="card-header" layout="row" layout-align="start center" layout-padding>
+		    	<md-button class="md-fab"  aria-label="Comment" ng-style="{'background-color':'#9E9E9E'}">
+            		<span class="white">P</span>
+        		</md-button>
+        		<div class="card-primary-text" flex layout="column" layout-align="center start" >
+							<div flex class="card-heading">Payments</div>
+							<div flex class="card-subtitle">View your Payments</div>
+				</div>
+		    </div>
+		    <md-divider ></md-divider>
+		   	<md-content class="body-text-std" layout-padding layout-margin>
+		   	<div class="card-stat" layout="column" layout-align="start center" >
+		   		
+		   		<div class="progress" ng-style="{'font-size': '37px'}">{{ (current/max)*100 + '%'}}</div>
+	            <div
+	                round-progress
+	                max="max"
+	                current="current"
+	                color="{{ currentColor }}"
+	                bgcolor="{{ bgColor }}"
+	                radius="{{ radius }}"
+	                semi="isSemi"
+	                rounded="rounded"
+	                stroke="{{ stroke }}"
+	                iterations="{{ iterations }}"
+	                animation="{{ currentAnimation }}">
+	            </div>
+
+		   	</div>
+		   	
+		    <p>Payments</p>
+		    <md-divider ></md-divider>
+		    <ul>
+		    	<li>You have 14 Payments so far</li>
+		    	<li>Your last accepted payment was 21 July 2015</li>
+		    	<li>You last payment was for monthly Installment</li>
+		    	<li>Your current balance is R 5300</li>
+		    	<li>Your Payment status: Up to Date</li>
+		    	<li>Your next payment is due: 1 August 2015</li>
+		    	<li>Your Monthly amount installment is: R500</li>
+		    </ul>
+		   	</md-content>
+		   	<div class="bottom-sheet-demo card-bottom" layout="column" layout-sm="row" layout-align="end end" flex>
+			    <md-button class="md-primary" ng-click="showListBottomSheet($event)">
+			     View
+			    </md-button>
+			    
+			  </div>
+		
+		  
+			  
+		    
+		  </md-whiteframe>
+		  </div>
+		  <div layout="column" flex-gt-lg="33" flex-lg="33" flex-md="50" flex-sm="100">
+		   <md-whiteframe class="md-whiteframe-z1 dashboard-card-narrow" layout="column" layout-margin >
+		    <div class="card-header" layout="row" layout-align="start center" layout-padding>
+		    	<md-button class="md-fab"  aria-label="Comment" ng-style="{'background-color':'#9E9E9E'}">
+            		<span class="white">C</span>
+        		</md-button>
+        		<div class="card-primary-text" flex layout="column" layout-align="center start" >
+							<div flex class="card-heading">Course Information</div>
+							<div flex class="card-subtitle">Details about your course</div>
+				</div>
+		    </div>
+		    <md-divider ></md-divider>
+		   	<md-content class="body-text-std" layout-padding layout-margin>
+		   		<div class="card-stat" layout="column" layout-align="start center" >
+		   		
+		   		<div class="progress" ng-style="{'font-size': '37px'}">{{ (current/max)*100 + '%'}}</div>
+	            <div
+	                round-progress
+	                max="max"
+	                current="current"
+	                color="{{ currentColor }}"
+	                bgcolor="{{ bgColor }}"
+	                radius="{{ radius }}"
+	                semi="isSemi"
+	                rounded="rounded"
+	                stroke="{{ stroke }}"
+	                iterations="{{ iterations }}"
+	                animation="{{ currentAnimation }}">
+	            </div>
+
+		   	</div>
+			    <p>Course</p>
+			    <md-divider ></md-divider>
+			   	<ol>
+			   		<li>We provide big progress circle</li>
+			   		<li>You have completed 6 Units</li>
+			   		<li>You have viewed 56 slides</li>
+			   		<li>You have started your course on: 24 Jan 2015</li>
+			   		<li>You are currently studying: ICT Professional Plus</li>
+			   		<li>You progress status is on: PAR</li>
+			   	</ol>
+		   	</md-content>
+		  </md-whiteframe>
+		  </div>
+		  <div layout="column" flex-gt-lg="33" flex-lg="33" flex-md="50" flex-sm="100">
+		  <md-whiteframe class="md-whiteframe-z1 dashboard-card-narrow" layout="column" layout-margin >
+		    <div class="card-header" layout="row" layout-align="start center" layout-padding>
+		    	<md-button class="md-fab"  aria-label="Comment" ng-style="{'background-color':'#9E9E9E'}">
+            		<span class="white">R</span>
+        		</md-button>
+        		<div class="card-primary-text" flex layout="column" layout-align="center start" >
+							<div flex class="card-heading">Requests</div>
+							<div flex class="card-subtitle">Needs your Urgent Attention</div>
+				</div>
+		    </div>
+		    <md-divider ></md-divider>
+		   	<md-content class="body-text-std" layout-padding layout-margin>
+			    <p>Requests</p>
+			    <md-divider ></md-divider>
+			   	<ol>
+			   		<li>You have 13 new Requests</li>
+			   		<li>You have 50 Request in pending status</li>
+			   		<li>You have 60 Requests in Resolved</li>
+			   		<li>You have escalated 4 Requests</li>
+			   		
+			   	</ol>
+		   	</md-content>
+		   	<div class="bottom-sheet-demo card-bottom" layout="column" layout-sm="row" layout-align="end end" flex>
+			    <md-button class="md-primary" ng-click="showListBottomSheet($event)">
+			     View
+			    </md-button>
+			    
+			  </div>
+			  <md-divider ></md-divider>
+				<div class="card-bottom-sheet" layout="column" data-ng-hide="false" layout-padding>
+					<md-button class="bottom-card-button">
+					<span class="fa fa-inbox icon-std" layout-margin></span>
+					<span> Inbox</span>
+					</md-button>
+					<md-button class="bottom-card-button">
+					<span class="fa fa-paper-plane icon-std" layout-margin></span>
+					<span> New Message</span>
+					</md-button>
+					
+			</div>
+		  </md-whiteframe>
+		  </div>
+		  <div layout="column" flex-gt-lg="33" flex-lg="33" flex-md="50" flex-sm="100">
+		  <md-whiteframe class="md-whiteframe-z1 dashboard-card-narrow" layout="column" layout-margin >
+		    <div class="card-header" layout="row" layout-align="start center" layout-padding>
+		    	<md-button class="md-fab"  aria-label="Comment" ng-style="{'background-color':'#9E9E9E'}">
+            		<span class="white">O</span>
+        		</md-button>
+        		<div class="card-primary-text" flex layout="column" layout-align="center start" >
+							<div flex class="card-heading">Orders</div>
+							<div flex class="card-subtitle">Check all your orders</div>
+				</div>
+		    </div>
+		    <md-divider ></md-divider>
+		   	<md-content class="body-text-std" layout-padding layout-margin>
+			    <p>Orders</p>
+			    <md-divider ></md-divider>
+			   	<ol>
+			   		<li>You have 5 new Orders</li>
+			   		<li>You have completed 235 Orders</li>
+			   		<li>Orders in pending status: 90</li>
+			   		<li>There are 17 Orders with Urgent flags</li>
+			   		
+			   	</ol>
+		   	</md-content>
+		   	<div class="bottom-sheet-demo card-bottom" layout="column" layout-sm="row" layout-align="end end" flex>
+			    <md-button class="md-primary" ng-click="showListBottomSheet($event)">
+			     View
+			    </md-button>
+			    
+			  </div>
+			  <md-divider ></md-divider>
+				<div class="card-bottom-sheet" layout="column" data-ng-hide="false" layout-padding>
+					<md-button class="bottom-card-button">
+					<span class="fa fa-inbox icon-std" layout-margin></span>
+					<span> All Orders</span>
+					</md-button>
+					<md-button class="bottom-card-button">
+					<span class="fa fa-paper-plane icon-std" layout-margin></span>
+					<span> New Order</span>
+					</md-button>
+					<md-button class="bottom-card-button">
+					<span class="fa fa-paper-plane icon-std" layout-margin></span>
+					<span> Urgent Orders</span>
+					</md-button>
+					
+			</div>
+		  </md-whiteframe>
+		  </div>
+	</div>
+	<!-- <div flex="15" hide-sm hide-md hide-lg></div> -->
+</div>

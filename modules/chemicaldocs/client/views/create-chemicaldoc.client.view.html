@@ -1,0 +1,100 @@
+
+    <div layout="row" flex data-ng-controller="ChemicaldocsController">
+    <div flex="15" hide-sm hide-md hide-lg></div>
+    <div flex layout="row" layout-wrap layout-align="start">
+        <!-- full width card -->
+        <div layout="column" flex="100">
+                <md-whiteframe class="md-whiteframe-z1 dashboard-card-full " layout="column" layout-margin> 
+                    <!-- Start wtih Form in here. -->
+                    <md-content class="md-padding">
+                        <form name="chemicalForm" data-ng-submit="uploadFile()" flex layout-fill class="std-text">
+                            <div layout="column" layout-sm="column" layout-fill>
+                            
+                            <h2>Create a new Document</h2>
+                            <md-divider></md-divider>
+                                <div layout="row" layout-sm="column">
+                                    <md-input-container flex>
+                                        <p><b>Document Type:</b> <span class="radioValue">{{ doc.type }}</span> </p>
+                                        <md-radio-group ng-model="doc.type" layout="row">
+                                          <md-radio-button value="policy">Policy</md-radio-button>
+                                          <md-radio-button value="procedure"> Procedure </md-radio-button>
+                                          <md-radio-button value="form"> Form </md-radio-button>
+                                        </md-radio-group>
+                                    </md-input-container>
+                                    <!-- <md-input-container flex>
+                                        <p><b>Gender:</b> <span class="radioValue">{{ credentials.gender }}</span> </p>
+                                        <md-radio-group ng-model="credentials.gender" layout="row">
+                                          <md-radio-button value="Male">Male</md-radio-button>
+                                          <md-radio-button value="Female"> Female </md-radio-button>
+                                          
+                                        </md-radio-group>
+                                    </md-input-container> -->
+                                    
+                                </div>
+                                <div layout="row" layout-sm="column">
+                                    <md-input-container flex>
+                                        <label>Name</label>
+                                        <input type="text" required name="name" ng-model="doc.name" placeholder="Enter Document Name">
+                                        <div ng-messages="managerForm.name.$error" class="error">
+                                          <div ng-message="required">This is required.</div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container flex>
+                                        <label>Number</label>
+                                        <input type="text" required name="number" ng-model="doc.no"placeholder="Placeholder text">
+                                        <div ng-messages="managerForm.number.$error" class="error">
+                                          <div ng-message="required">This is required.</div>
+                                        </div>
+                                    </md-input-container>
+                                    
+                                </div>
+                                <br>
+                                <md-button class="md-warn" ng-file-select ng-model="file" ng-multiple="false" >
+
+                                Select File
+
+                                </md-button>
+
+                                <div>
+                                    <ul>
+                                        <li ng-repeat="item in uploader.queue"><span>{{item.file.name}}</span> <span>{{ item.file.size/1024/1024|number:2 }} MB</span></li>
+                                    </ul>
+                                </div>
+                                <div >
+                                     <md-progress-linear class="md-warn" md-mode="determinate" ng-value="{{item.progress}}"></md-progress-linear>
+                                </div>
+                                <br>
+                                <br>
+                                <div layout="row" flex layout-align="end center">
+                                        <md-button type="submit" class="md-raised md-warn">Upload Document</md-button>
+                                </div>
+                            </div>
+                        </form>
+                    </md-content>
+                </md-whiteframe>    
+        </div>
+    </div> <!-- End of Layout middle flex -->
+    <div flex="15" hide-sm hide-md hide-lg></div>
+</div>
+
+    <!-- <div class="page-header">
+        <h1>New Chemicaldoc</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div> -->

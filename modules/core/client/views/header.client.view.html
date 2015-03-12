@@ -1,0 +1,205 @@
+<section data-ng-controller="HeaderController">
+	
+
+<md-content>
+
+	<md-toolbar class="md-primary toolbar-top" data-ng-hide="authentication.user">
+			<div layout="row" >
+				<div flex="17" layout-padding class="logo-holder">
+					<img data-ng-src="modules/core/img/brand/afrupro.png" class="logo-sidenav" >
+				</div>
+				<div layout-align="start end" layout="row" flex="66">
+					<md-tabs >
+						<md-tab data-ui-sref="products">
+							Products
+						</md-tab data-ui-sref="features">
+						<md-tab>
+							Features
+						</md-tab>
+						<md-tab>
+							Pricing
+						</md-tab>
+						<md-tab data-ui-sref="about">
+							About Us
+						</md-tab>
+						<md-tab>
+							Contact
+						</md-tab>
+						<md-tab>
+							Register
+						</md-tab>
+						<md-tab>
+							Sign In
+						</md-tab>
+					</md-tabs>
+			</div>
+				<div flex="20">
+					<div layout="row" layout-align="end center" data-ng-hide="authentication.user">
+						<md-button class="toolbar-button" data-ui-sref="authentication.signin">
+							signin <span class="fa fa-chevron-right"></span>
+						</md-button>
+					</div>
+					<div layout="row" layout-align="end start" data-ng-show="authentication.user">
+						<div layout="row">
+							
+							<md-button class="toolbar-button" data-ui-sref="authentication.signup" layout="row">
+								<div flex="17" layout-align="center center">
+									<img data-ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image mar-5-top"/>
+								</div>
+								<div flex layout-margin layout-align="center start">
+									<span flex>{{authentication.user.displayName}}</span>
+								</div>
+								
+							</md-button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</md-toolbar>
+
+
+		<md-toolbar class="md-tall md-primary toolbar-top" data-ng-show="authentication.user">
+			<div layout="row" >
+				<div flex="50" layout-padding>
+					<div layout="row" layout-align="start start">
+						<md-button data-ui-sref="dashboard">
+								<ng-md-icon icon="home"  size="26px" ></ng-md-icon> 
+							</md-button>
+						<span flex layout-margin>Afrupro</span>
+					</div>
+				</div>
+				<div flex="50">
+					<div layout="row" layout-align="end start" data-ng-hide="authentication.user">
+						<md-button class="toolbar-button" data-ui-sref="authentication.signup">
+							signup
+						</md-button>
+						<md-button class="toolbar-button" data-ui-sref="authentication.signin">
+							signin
+						</md-button>
+					</div>
+					<div layout="row" layout-align="end start" data-ng-show="authentication.user">
+						<div layout="row">
+
+							<md-button class="toolbar-button" layout="row" data-ng-click="toggleProfile()">
+								<div flex="20" layout-align="center center">
+									<img data-ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image mar-5-top"/>
+								</div>
+								<div flex layout-margin layout-align="center start">
+									<span flex>{{authentication.user.displayName}}</span>
+								</div>
+								
+							</md-button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="md-toolbar-tools md-toolbar-tools-bottom tools-bottom" layout="row">
+				<span class="nav-icon-container">
+					<md-button>
+						<img data-ng-src="modules/core/img/icons/navigation-white.png" class="navigation-icon" ng-click="toggleLeft()">
+					</md-button>
+					
+				</span>
+				<md-tabs >
+					<md-tab>
+						Item 1
+					</md-tab>
+					<md-tab>
+						Item 2
+					</md-tab>
+					<md-tab>
+						Item 3
+					</md-tab>
+					<md-tab>
+						Item 3
+					</md-tab>
+					<md-tab>
+						Item 3
+					</md-tab>
+					<md-tab>
+						Item 3
+					</md-tab>
+				</md-tabs>
+			</div>
+		</md-toolbar>
+
+
+		
+</md-content>
+<md-whiteframe class="md-whiteframe-z1 profile-options" layout="column" layout-align="center start" data-ng-hide="collapseProfile" ng-click=closeProfile();>
+		   	<md-button class="chip-button" layout-fill data-ui-sref="settings.profile" >Edit Profile</md-button>
+		   <md-button class="chip-button" layout-fill data-ui-sref="settings.picture">Profile Picture</md-button>
+		   <md-button class="chip-button" layout-fill data-ui-sref="settings.password">Change password</md-button>
+		   <a href="/api/auth/signout" target="_self">
+		   		<md-button class="chip-button" layout-fill>Sign Out</md-button>
+		   </a>
+		   
+</md-whiteframe>
+
+</section>
+	
+<!-- <div class="container" data-ng-controller="HeaderController">
+	
+	<div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-ng-click="toggleCollapsibleMenu()">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a data-ui-sref="home" class="navbar-brand">avuxeni</a>
+	</div>
+	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
+		<ul class="nav navbar-nav" data-ng-if="menu.shouldRender(authentication.user);">
+			<li data-ng-repeat="item in menu.items | orderBy: 'position'" data-ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" data-ng-class="{active: $state.includes(item.state)}" class="{{item.class}}" dropdown="item.type === 'dropdown'">
+				<a ng-switch-when="dropdown" class="dropdown-toggle">
+					<span data-ng-bind="item.title"></span>
+					<b class="caret"></b>
+				</a>
+				<ul ng-switch-when="dropdown" class="dropdown-menu">
+					<li data-ng-repeat="subitem in item.items | orderBy: 'position'" data-ng-if="subitem.shouldRender(authentication.user);" data-ui-sref-active="active">
+						<a data-ui-sref="{{subitem.state}}" data-ng-bind="subitem.title"></a>
+					</li>
+				</ul>
+				<a ng-switch-default data-ui-sref="{{item.state}}" data-ng-bind="item.title"></a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
+			<li data-ui-sref-active="active">
+				<a data-ui-sref="authentication.signup" target="_self">Sign Up</a>
+			</li>
+			<li class="divider-vertical"></li>
+			<li data-ui-sref-active="active">
+				<a data-ui-sref="authentication.signin" target="_self">Sign In</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle user-header-dropdown-toggle" data-toggle="dropdown">
+					<img data-ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image"/>
+					<span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="settings.profile">Edit Profile</a>
+					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="settings.picture">Change Profile Picture</a>
+					</li>
+					<li data-ui-sref-active="active" data-ng-show="authentication.user.provider === 'local'">
+						<a data-ui-sref="settings.password">Change Password</a>
+					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="settings.accounts">Manage Social Accounts</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="/api/auth/signout" target="_self">Signout</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>
+ -->

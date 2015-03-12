@@ -1,0 +1,220 @@
+
+
+<div layout="row" flex data-ng-controller="AuthenticationController" data-ng-init="hideConfirm()" >
+
+	<div class="confirmation" layout="column" layout-align="center center"  data-ng-if="confirmState[0] == 'true'">
+		<md-whiteframe class="md-whiteframe-z3" layout="column" layout-align="center center" layout-padding ng-style="{ 'background-color': 'white'}" layout-margin>
+	    <span layout-margin><ng-md-icon icon="verified_user" size="30px"></ng-md-icon></span>
+	    <span layout="row" layout-align="center center">Succesfully Created New User</span>
+	    <br>
+		<div layout="row" layout-align="center center">
+				<md-button class="md-fab profile-pic-std"  aria-label="Comment" ng-style="{ 'background-image': 'url({{newUser.profileImageURL}})', 'background-size': '100%'}" layout-margin layout-padding>
+			</md-button>
+			<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill >
+					<div flex class="single-line-item ">{{newUser.displayName}}</div>
+			</div>
+			
+		</div>
+		<br>
+	    <span>What would you like to do?</span>
+	    <div class="confirmation-actions" layout="row" layout-align="center center" flex layout-fill>
+	    	<md-button class="md-accent" ng-click="createSite()">Define Site</md-button>
+	    	<md-button class="md-primary" ng-click="listUsers()">Proceed</md-button>
+	    </div>
+	  </md-whiteframe>
+	</div>
+
+
+	<div flex="15" hide-sm hide-md hide-lg></div>
+	<div flex layout="row" layout-wrap layout-align="start">
+		<!-- full width card -->
+		<div layout="column" flex="100">
+				<md-whiteframe class="md-whiteframe-z1 dashboard-card-full " layout="column" layout-margin>	
+				   	<!-- Start wtih Form in here. -->
+				   	<md-content class="md-padding">
+				   		<form name="managerForm" data-ng-submit="signup('user')" flex layout-fill class="std-text">
+				   			<div layout="column" layout-sm="column" layout-fill>
+				   			
+				   			<h2>Sign Up Admin</h2>
+				   			<md-divider></md-divider>
+				   				<div layout="row" layout-sm="column">
+				   					<md-input-container flex>
+					   					<p><b>Title:</b> <span class="radioValue">{{ credentials.title }}</span> </p>
+									    <md-radio-group ng-model="credentials.title" layout="row">
+									      <md-radio-button value="Mr">Mr</md-radio-button>
+									      <md-radio-button value="Mrs"> Mrs </md-radio-button>
+									      <md-radio-button value="Ms">Mrs</md-radio-button>
+									    </md-radio-group>
+					   				</md-input-container>
+					   				<md-input-container flex>
+					   					<p><b>Gender:</b> <span class="radioValue">{{ credentials.gender }}</span> </p>
+									    <md-radio-group ng-model="credentials.gender" layout="row">
+									      <md-radio-button value="Male">Male</md-radio-button>
+									      <md-radio-button value="Female"> Female </md-radio-button>
+									      
+									    </md-radio-group>
+					   				</md-input-container>
+					   				
+				   				</div>
+				   				<div layout="row" layout-sm="column">
+				   					<md-input-container flex>
+					   					<label>Firstname</label>
+					   					<input type="text" required name="name" ng-model="credentials.firstName"placeholder="Placeholder text">
+					   					<div ng-messages="managerForm.name.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+								        </div>
+					   				</md-input-container>
+					   				<md-input-container flex>
+					   					<label>Lastname</label>
+					   					<input type="text" required name="lastname" ng-model="credentials.lastName" placeholder="Placeholder text">
+					   					<div ng-messages="managerForm.lastname.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+								        </div>
+					   				</md-input-container>
+					   				<md-input-container flex>
+					   					<label>RSA ID Number</label>
+					   					<input  type="text" ng-minlength="13" ng-maxlength="13" md-maxlength="13" required name="rsaid" ng-model="credentials.rsaId" placeholder="Placeholder text">
+					   					<div ng-messages="managerForm.rsaid.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+         								  <div ng-message="minlength">Check the length of your Id Number</div>
+								          <div ng-message="md-maxlength">Check the length of your Id Number</div>
+								        </div>
+					   				</md-input-container>
+				   				</div>
+				   				
+				   				<div layout="row" flex layout-sm="column">
+				   					<md-input-container flex>
+					   					<label>Mobile Number</label>
+					   					<input md-maxlength="10" name="mobile" ng-model="credentials.mobileNumber" placeholder="Placeholder text">
+					   					<div ng-messages="managerForm.mobile.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+         								<div ng-message="md-maxlength">Mobile has to be 10 characters long.</div>
+								        </div>
+					   				</md-input-container>
+					   				<md-input-container flex>
+					   					<label>Telehone</label>
+					   					<input ng-model="credentials.telephoneNumber" placeholder="Placeholder text">
+					   				</md-input-container>
+					   				<md-input-container flex>
+					   					<label>Email</label>
+					   					<input type="email" required name="email" ng-model="credentials.email" placeholder="Placeholder text">
+					   					<div ng-messages="managerForm.email.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+         									<div ng-message="email">Make sure entered a correct Email type</div>
+								        </div>
+					   				</md-input-container>
+				   				</div>
+				   				<div layout="row" flex layout-sm="column">
+				   					<md-input-container flex>
+					   					<label>Username</label>
+					   					<input required name="username" ng-model="credentials.username" placeholder="Placeholder text">
+					   					<div ng-messages="managerForm.username.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+         								  
+								        </div>
+					   				</md-input-container>
+					   				<md-input-container flex>
+					   					<label>Password</label>
+					   					<input ng-minlength="6" required name="password"  ng-model="credentials.password" placeholder="Placeholder text">
+		
+								        <div ng-messages="managerForm.password.$error" class="error">
+								          <div ng-message="required">This is required.</div>
+         								  <div ng-message="minlength">Length of Password must be atleast 6 Chars</div>
+								        </div>
+					   				</md-input-container>
+					   				
+				   				</div>
+				   				<div layout="row" flex layout-align="end center">
+					   					<md-button type="submit" class="md-raised md-warn">Register</md-button>
+					   				</div>
+				   			</div>
+				   		</form>
+				   	</md-content>
+				</md-whiteframe>	
+		</div>
+	</div> <!-- End of Layout middle flex -->
+	<div flex="15" hide-sm hide-md hide-lg></div>
+</div>
+
+
+<!-- <h3 class="col-md-12 text-center">Or sign up using your email</h3>
+	<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
+		<form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+			<fieldset>
+				<div class="form-group">
+					<label for="firstName">First Name</label>
+					<input type="text" required id="firstName" name="firstName" class="form-control"
+						   data-ng-model="credentials.firstName" placeholder="First Name">
+				</div>
+				<div class="form-group">
+					<label for="lastName">Last Name</label>
+					<input type="text" id="lastName" name="lastName" class="form-control"
+						   data-ng-model="credentials.lastName" placeholder="Last Name">
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email"
+						   placeholder="Email">
+				</div>
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input type="text" id="username" name="username" class="form-control"
+						   data-ng-model="credentials.username" placeholder="Username">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" id="password" name="password" class="form-control"
+						   data-ng-model="credentials.password" placeholder="Password">
+				</div>
+				<div class="text-center form-group">
+					<button type="submit" class="btn btn-large btn-primary">Sign up</button>
+					&nbsp; or&nbsp;
+					<a data-ui-sref="authentication.signin" class="show-signup">Sign in</a>
+				</div>
+				<div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div> -->
+
+<!-- <h3 class="col-md-12 text-center">Or sign up using your email</h3>
+	<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
+		<form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+			<fieldset>
+				<div class="form-group">
+					<label for="firstName">First Name</label>
+					<input type="text" required id="firstName" name="firstName" class="form-control"
+						   data-ng-model="credentials.firstName" placeholder="First Name">
+				</div>
+				<div class="form-group">
+					<label for="lastName">Last Name</label>
+					<input type="text" id="lastName" name="lastName" class="form-control"
+						   data-ng-model="credentials.lastName" placeholder="Last Name">
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email"
+						   placeholder="Email">
+				</div>
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input type="text" id="username" name="username" class="form-control"
+						   data-ng-model="credentials.username" placeholder="Username">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" id="password" name="password" class="form-control"
+						   data-ng-model="credentials.password" placeholder="Password">
+				</div>
+				<div class="text-center form-group">
+					<button type="submit" class="btn btn-large btn-primary">Sign up</button>
+					&nbsp; or&nbsp;
+					<a data-ui-sref="authentication.signin" class="show-signup">Sign in</a>
+				</div>
+				<div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div> -->

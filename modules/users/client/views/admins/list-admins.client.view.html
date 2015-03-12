@@ -1,0 +1,81 @@
+<div layout="row" flex data-ng-controller="AdminsController" data-ng-init="find()">
+	<div flex="15" hide-sm hide-md hide-lg>
+		
+	</div>
+	<div flex layout="row" layout-wrap layout-align="start">
+		
+		<!-- ng repeat of 4 best functions -->
+
+		<div layout="column" flex="100" class="actual">
+				
+
+				<md-whiteframe class="md-whiteframe-z1 dashboard-card-full zoom" layout="column" layout-margin>	
+					<div class="bottom-sheet-demo card-bottom" layout="row"  layout-align="start center" flex layout-fill>
+							<div flex="70" layout="row" layout-padding ng-style="{ 'margin-left': '20px'}">
+								<span>
+										<md-input-container flex>
+					   					<label>Filter Users</label>
+					   					<input type="text" name="lastname" ng-model="credentials.lastName" placeholder="Filter Users">
+					   				</md-input-container>
+								</span> 
+							</div>
+							
+				    		<div flex layout="column" layout-align="center center">
+					    		<md-button class="md-fab md-warn action-btn" layout="row" layout-align="center center" flex data-ui-sref="authentication.signup.admin">
+					           		 <ng-md-icon icon="add"  size="32px" ></ng-md-icon> 
+					        	</md-button>    
+				    		</div>
+				    		
+			  		</div>
+					<!-- <div class="card-header" layout="row" layout-align="start center" layout-padding>
+				    	<md-button class="md-fab md-primary"  aria-label="Comment" >
+		            		<ng-md-icon icon="map"  size="20px"></ng-md-icon> 
+		        		</md-button>
+		        		<div class="card-primary-text" flex layout="column" layout-align="center start" >
+									<div flex class="card-heading">Administrators</div>
+									<div flex class="card-subtitle">Listed Adminstrators from Afrupro</div>
+						</div>
+			    	</div> -->
+		    		<md-divider ></md-divider>
+		   			<md-content class="body-text-std" >
+		  
+		   				<ul class="material-fw-list" flex>
+		   					<li class="pad-left-5 border-bottom" ng-repeat="admin in admins" flex layout-fill layout-padding layout="column" >
+		   						<div layout="row" >
+		   							<md-button class="md-fab profile-pic-std"  aria-label="Comment" ng-style="{ 'background-image': 'url({{admin.profileImageURL}})', 'background-size': '100%'}" layout-margin layout-padding>
+	        						</md-button>
+	        						<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill layout-padding >
+												<div flex class="single-line-item ">{{admin.displayName}}</div>
+									</div>
+									<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill layout-padding >
+												<div flex class="single-line-item ">Afrupro Administrator</div>
+									</div>
+									<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill layout-padding >
+												<div flex class="single-line-item ">{{admin.mobileNumber}}</div>
+									</div>
+									<div class="line-item-indent" flex layout="column" layout-align="center start" layout-fill layout-padding >
+												<div flex class="single-line-item ">{{admin.email}}</div>
+									</div>
+									<div class="line-item-indent" flex layout="column" layout-align="center end" layout-fill layout-padding >
+												<md-button> <span class="fa fa-ellipsis-v more"></span></md-button>
+									</div>
+		   						</div>
+		   						
+	        					<div layout-margin layout-padding>
+	        						<md-divider md-inset ng-if="!$last"></md-divider>
+	        					</div>
+		   					</li>
+		   				</ul>
+		   			</md-content>
+		   				
+				</md-whiteframe>	
+		</div>
+
+		
+
+		
+		 
+		  
+	</div>
+	<div flex="15" hide-sm hide-md hide-lg></div>
+</div>
