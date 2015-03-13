@@ -1,0 +1,21 @@
+/***************************************
+  vAccordion
+ ***************************************/
+
+
+/**
+ * Example HTML:
+ *
+  <v-accordion class="vAccordion--default">
+    <v-pane>
+      <v-pane-header>[content]</v-pane-header>
+      <v-pane-content>[content]</v-pane-content>
+    </v-pane>
+  </v-accordion>
+ */
+
+
+@import 'settings';
+@import 'base';
+@import 'theme';
+
